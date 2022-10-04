@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            background-color: blue;
+            width: 100vw;
+            height: 10vh;
+        }
+        .content {
+            background-color: green;
+            width: 100vw;
+            min-height: 80vh;
+            padding: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .footer {
+            background-color: blue;
+            width: 100vw;
+            height: 10vh;
+        }
+        .container-principal {
+            background-color: red;
+            width: 70%;
+            min-height: 100%;
+            padding: 30px;
+
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
+        .card {
+            background-color: yellow;
+            padding: 5px;
+            margin: 5px;
+            width: 100%;
+            height: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item-card {
+            padding: 5px;
+            width: calc(100% / 5);
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer MVT</title>
+</head>
+
+<body>
+
+    <div class="header"></div>
+
+    <div class="content" >
+        <div class="container-principal">
+            {% for familiar in familiares %}
+                <div class="card">
+                    <p class="item-card">Nombre: {{familiar.nombre}} </p>
+                    <p class="item-card">Apellido: {{familiar.apellido}} </p>
+                    <p class="item-card">Edad: {{familiar.edad}} </p>
+                    <p class="item-card">Cumpleaños: {{familiar.fechaCumpleaños}} </p>
+                    <p class="item-card">Parentezco: {{familiar.realacionParental}} </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="footer"></div>
+
+</body>
+
+</html>
