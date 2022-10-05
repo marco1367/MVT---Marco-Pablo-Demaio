@@ -7,12 +7,28 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .header {
             background-color: rgb(33, 33, 116);
             width: 100vw;
             height: 10vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title-header-container {
+            width: auto;
+            height: auto;
+            padding: 5px;
+        }
+
+        .title-header {
+            font-size: 35px;
+            color: white;
         }
 
         .content {
@@ -84,8 +100,11 @@
 
 <body>
 
-    <div class="header"></div>
-
+    <div class="header">
+        <div class="title-header-container">
+            <p class="title-header"> Mi primer MVT - Django </p>
+        </div>
+    </div>
     <div class="content">
         <div class="container-principal">
             {% for familiar in familiares %}
