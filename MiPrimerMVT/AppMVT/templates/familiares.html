@@ -3,18 +3,36 @@
 
 <head>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
+
         .header {
-            background-color: blue;
+            background-color: rgb(33, 33, 116);
             width: 100vw;
             height: 10vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        .title-header-container {
+            width: auto;
+            height: auto;
+            padding: 5px;
+        }
+
+        .title-header {
+            font-size: 35px;
+            color: white;
+        }
+
         .content {
-            background-color: green;
+            background-color: rgb(224, 223, 223);
             width: 100vw;
             min-height: 80vh;
             padding: 10px;
@@ -23,38 +41,55 @@
             justify-content: center;
             align-items: flex-start;
         }
+
         .footer {
-            background-color: blue;
+            background-color: rgb(33, 33, 116);
             width: 100vw;
             height: 10vh;
         }
+
         .container-principal {
-            background-color: red;
+            background-color: white;
             width: 70%;
             min-height: 100%;
             padding: 30px;
+            border-radius: 5px;
+            box-shadow: hsla(0, 0%, 60%, 0.671);
 
 
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            padding: 15px;
+            margin: 20px;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid rgb(216, 216, 216);
+            transform: all 3000ms ease-in;
+
+            display: flex;
+            justify-content: center;
             align-items: center;
             flex-direction: column;
         }
-        .card {
-            background-color: yellow;
-            padding: 5px;
-            margin: 5px;
-            width: 100%;
-            height: auto;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .card:hover {
+            transform: all 3000ms ease-out;
+            background-color: rgb(224, 223, 223);
+            transform: scale(1.1);
         }
+
         .item-card {
             padding: 5px;
-            width: calc(100% / 5);
-            text-align: center;
+            width: 100%;
+            text-align: start;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
         }
     </style>
     <meta charset="UTF-8">
@@ -65,18 +100,21 @@
 
 <body>
 
-    <div class="header"></div>
-
-    <div class="content" >
+    <div class="header">
+        <div class="title-header-container">
+            <p class="title-header"> Mi primer MVT - Django </p>
+        </div>
+    </div>
+    <div class="content">
         <div class="container-principal">
             {% for familiar in familiares %}
-                <div class="card">
-                    <p class="item-card">Nombre: {{familiar.nombre}} </p>
-                    <p class="item-card">Apellido: {{familiar.apellido}} </p>
-                    <p class="item-card">Edad: {{familiar.edad}} </p>
-                    <p class="item-card">Cumpleaños: {{familiar.fechaCumpleaños}} </p>
-                    <p class="item-card">Parentezco: {{familiar.realacionParental}} </p>
-                </div>
+            <div class="card">
+                <p class="item-card">Nombre: {{familiar.nombre}} </p>
+                <p class="item-card">Apellido: {{familiar.apellido}} </p>
+                <p class="item-card">Edad: {{familiar.edad}} </p>
+                <p class="item-card">Cumpleaños: {{familiar.fechaCumpleaños}} </p>
+                <p class="item-card">Parentezco: {{familiar.realacionParental}} </p>
+            </div>
             {% endfor %}
         </div>
     </div>
